@@ -1,49 +1,45 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography';
 
-function Bio() {
-  return (
-    <StaticQuery
-      query={bioQuery}
-      render={data => {
-        const { author, social } = data.site.siteMetadata
-        return (
-          <div
+const Bio = () => (
+  <StaticQuery
+    query={bioQuery}
+    render={data => {
+      const { author, social } = data.site.siteMetadata;
+      return (
+        <div
+          style={{
+            display: `flex`,
+            marginBottom: rhythm(2.5),
+          }}
+        >
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt={author}
             style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5),
+              marginRight: rhythm(1 / 2),
+              marginBottom: 0,
+              minWidth: 50,
+              borderRadius: `100%`,
             }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
-            </p>
-          </div>
-        )
-      }}
-    />
-  )
-}
+            imgStyle={{
+              borderRadius: `50%`,
+            }}
+          />
+          <p>
+            Personal blog by <strong>{author}</strong>
+            <br />
+            You should follow him on <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+            and <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>
+          </p>
+        </div>
+      );
+    }}
+  />
+);
 
 const bioQuery = graphql`
   query BioQuery {
@@ -59,10 +55,11 @@ const bioQuery = graphql`
         author
         social {
           twitter
+          instagram
         }
       }
     }
   }
-`
+`;
 
-export default Bio
+export default Bio;
