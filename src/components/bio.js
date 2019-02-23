@@ -32,7 +32,9 @@ const Bio = () => (
           <p>
             Personal blog by <strong>{author}</strong>
             <br />
-            You should follow him on <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+            You should follow him on <a href={`https://twitter.com/${social.twitter}`}>
+              Twitter
+            </a>{' '}
             and <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>
           </p>
         </div>
