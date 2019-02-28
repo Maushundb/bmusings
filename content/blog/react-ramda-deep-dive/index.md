@@ -1,5 +1,5 @@
 ---
-title: 'Using Ramda with React and Redux: A Functional Deep Dive'
+title: 'Using Ramda with React and Redux: A Functional Deep Dive Part 1'
 date: '2019-02-27T13:30'
 ---
 
@@ -19,14 +19,14 @@ procedural or object-oriented style.
 In my experience, the average frontend React and Redux codebase suffers from a handful of common
 issues:
 
-### Components that have too much logic embedded into them
+### Components have too much logic embedded into them
 
 View logic is usually tangled up with rerender and data processing or fetching logic. This makes
 components hard to reason about, refactor, and maintain. Because these are usually class components,
 it also leaves room open for more junior devs or full-stack engineers without a strong grasp of
 frontend best practices to start storing application state in `state` or worse, `this`.
 
-### Reducers that are hard to reason about
+### Reducers are hard to reason about
 
 Large reducers tend top use the canonical `switch` statement along with some heavy procedural data
 manipulation, usually with loops and local mutation. This leads to bugs when things accidentally get
@@ -39,7 +39,7 @@ to get to the data they want, thus forcing them to embed knowledge of the curren
 state object. This makes reducers doubly hard to refactor since these two things get tangled
 together.
 
-### An object-oriented domain specific library
+### Object-oriented domain specific library
 
 Examples include data visualizations, maps, financial calculations, file importing / exporting,
 video playback, canvas work for a game or animation, A/B testing, user analytics, etc.

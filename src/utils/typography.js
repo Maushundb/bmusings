@@ -10,10 +10,7 @@ Wordpress2016.overrideThemeStyles = () => {
       boxShadow: `none`,
     },
     a: {
-      color: '#4b95a9',
-    },
-    h3: {
-      fontSize: '1.3rem',
+      color: '#468b9d',
     },
   };
 };
