@@ -1,6 +1,6 @@
 ---
 title: 'Using Ramda with React and Redux: A Functional Deep Dive'
-date: '2019-02-23T13:30'
+date: '2019-02-27T13:30'
 ---
 
 Functional programming is all the rage amongst javascript developers these days. With the recent
