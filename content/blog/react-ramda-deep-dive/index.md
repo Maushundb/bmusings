@@ -19,12 +19,12 @@ procedural or object-oriented style.
 In my experience, the average frontend React and Redux codebase suffers from a handful of common
 issues:
 
-### Components have too much logic embedded into them
+### Components have too much logic embedded in them
 
 View logic is usually tangled up with rerender and data processing or fetching logic. This makes
 components hard to reason about, refactor, and maintain. Because these are usually class components,
-it also leaves room open for more junior devs or full-stack engineers without a strong grasp of
-frontend best practices to start storing application state in `state` or worse, `this`.
+it also leaves room open for more junior or full-stack engineers without a strong grasp of frontend
+best practices to start storing application state in `state` or worse, `this`.
 
 ### Reducers are hard to reason about
 
@@ -39,15 +39,6 @@ to get to the data they want, thus forcing them to embed knowledge of the curren
 state object. This makes reducers doubly hard to refactor since these two things get tangled
 together.
 
-### Object-oriented domain specific library
-
-Examples include data visualizations, maps, financial calculations, file importing / exporting,
-video playback, canvas work for a game or animation, A/B testing, user analytics, etc.
-
-Regardless of the domain, more often than not what I see is an object-oriented API being forced upon
-an inherently function set of frameworks. This requires weird state synchronization hacks and poorly
-written wrappers around objects to get the two paradigms to play nice.
-
 As the codebase scales, many of these negative aspects tend to become more exacerbated and developer
 productivity starts to slow down. After seeing this a few times, you start to ask yourself - can we
 do better?
@@ -61,29 +52,58 @@ convinced, you can check out
 - [Why curry helps](https://hughfdjackson.com/javascript/why-curry-helps/)
 - [An introduction to functional programming in Javascript](https://github.com/getify/Functional-Light-JS)
 
-Now that we're convinced, lets define what it means to be "All-In" in our React and Redux context.
+I claim that **heavily applying the following functional paradigms to our frontend application help
+us mitigate and in some cases solve all of the aforementioned problems:**
 
-### State As Data
+- Functional composition
+- Data immutability
+- Function purity and segregation of side-effects
 
-Any state that our application stores exists as serializable data: Objects, Arrays, or language
-primitives. This state is located in our Redux store, save the few sensible cases where a React
-component needs some one-off UI state like `isHovered`. Thus, classes become useless since any
-stateless class is just a wrapper for some API of functions. State is always modified by a function
-acting upon it, not by calling a method on itself.
+### Functional Composition
 
-### Segregation of Side-Effects
+Functional composition encourages the creation of small, general purpose functions that are composed
+together to create larger and more complex functions. For example:
+
+<!-- prettier-ignore -->
+```jsx
+const sliceString = (string, start, end) => string.slice(start, end);
+const stringHead = string => sliceString(string, 0, 1);
+
+const isA = character => ['a', 'A'].includes(character);
+const isHeadA = string => isA(stringHead(string));
+
+isHeadA("ant") // true
+
+// to do this pattern more generally, we can use compose
+const isHeadA = compose(
+  isA,
+  stringHead,
+);
+
+// or in reverse order, pipe, which lets us 
+// pipe our input through functions from top to bottom
+const isHeadA = pipe(
+  stringHead,
+  isA,
+);
+```
+
+This technique can be used in both component containers and selectors to both share common logic
+between and segregate application logic from your containers and components.
+
+### Function Purity and Segregation of Side-Effects
 
 All functions in our application are pure, with the exception of middleware for things like network
 requests or I/O. In this case, we maintain a strict convention of segregating our side-effectful
 calls from the pure computation that influences their results. Our functional core does all the
 heavy lifting and logic, and the result is passed to a dumb API that produces a side-effect with the
-result given to it by the functional core.
+result given to it by the functional core, i.e. our reducers.
 
 In other words, data transformation only happens in pure functions, never in a a side-effectful one.
 [Gary Bernhardt](https://www.destroyallsoftware.com/talks/boundaries) has a great talk on this that
 I highly encourage you to check out.
 
-### No Data Mutation
+### Data immutability
 
 To change a piece of data, you must always return a new instance of that data type. Methods like
 `.push` on arrays and setting properties on existing objects are not allowed.
@@ -105,26 +125,13 @@ This will prevent us from ever running into rerendering bugs, and generally most
 implicit data mutation. If you've ever had an async callback mess with an object you were working on
 in the middle of a function, you'll know what I'm talking about.
 
-### Selectors derive state, containers aggregate, and components present
-
-Some of this may be old news to some Redux veterans, but it bares repeating since lines tend to get
-fuzzy as an given application scales. For us, it is important to maintain strict boundaries.
-Division of labor in our application is as follows:
-
-- Your store contains state is solely responsible for updating it.
-- Selectors derive, aggregate, or otherwise transform data from your state into something your
-  components can display.
-- Containers calls selectors, maybe do some aggregation, and pass the result to components
-- Stateless functional components display pre-derived data on the screen, and maybe add a hook or
-  two.
-
 ## The Tools
 
 Here is where [Ramda](https://ramdajs.com/) comes in. Ramda is a javascript utility library for
 functional styling programming, focusing on creating data pipelines.
 
 Each function is curried, never mutates its input, and accepts the data to be operated on as a its
-last parameter. This gives us immutability, treats state as data, and helps to segregate side
+last parameter. This gives us immutability, easy function composition, and helps to segregate side
 effects for us right out of the box. You can read more on the philosophy of the library
 [here](https://fr.umio.us/the-philosophy-of-ramda/).
 
@@ -205,7 +212,7 @@ const getTotalValueOfHomesForSale = createSelector(
 We can use Ramda's object utilities to dig into nested state for simple reducers, compose selectors
 cleanly, and create data pipelines that scale to an arbitrary number of steps.
 
-Since selectors are unary functions of `state -> someData`, they fit extremely well with Ramda's
+Since selectors are unary functions of `state -> someData`, they fit extremely well with our
 pipeline model. In addition, since Ramda never mutates data, we can have faith that memoization will
 always work as intended and won't cause unnecessary rerenders in our receiving components.
 
@@ -238,9 +245,12 @@ This makes selectors easy to maintain, test, and reason about.
 In general, the point-free notation, while sometimes hard to reason about (having
 `x => console.log(x) || x` is a great debugging tool to stick in pipelines), makes it harder for
 other developers to come in and introduce mutation and potential bugs into your pipeline without a
-large rewrite and significant understanding of FP practices. It creates a slight barrier of entry
-that protects your code from being muddled back into an imperative style, which, if you are working
-in a section of a larger codebase without as strict standards, is a very good defence to have.
+large rewrite and significant understanding of FP practices.
+
+It makes it easy to add additional steps in your pipeline, and otherwise creates a slight barrier to
+entry that protects your code from being muddled back into an imperative style, which, if you are
+working in a section of a larger codebase without as strict standards, is a very good defence to
+have.
 
 ### Reducers
 
@@ -446,7 +456,7 @@ const mapStateToProps = R.applySpec({
 });
 ```
 
-Once again letting us get our containers in a laconic point-free style.
+Once again letting us write our containers in a laconic point-free style.
 
 ### Testing
 
