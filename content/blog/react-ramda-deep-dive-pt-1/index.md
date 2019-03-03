@@ -14,7 +14,7 @@ conventions, and effects on maintainability that using strict declarative and fu
 you, as well as calling out some of the concessions you'll be making compared to using a more
 procedural or object-oriented style.
 
-## THE STATUS QUO
+## The Status Quo
 
 In my experience, the average frontend React and Redux codebase suffers from a handful of common
 issues:
