@@ -1,6 +1,6 @@
 ---
-title: 'Using Ramda with React and Redux: A Functional Deep Dive Part 1'
-date: '2019-02-27T13:30'
+title: 'Using Ramda with React and Redux: A Functional Deep Dive - Part 1'
+date: '2019-03-01T13:30'
 ---
 
 Functional programming is all the rage amongst javascript developers these days. With the recent
@@ -52,7 +52,7 @@ convinced, you can check out
 - [Why curry helps](https://hughfdjackson.com/javascript/why-curry-helps/)
 - [An introduction to functional programming in Javascript](https://github.com/getify/Functional-Light-JS)
 
-I claim that **heavily applying the following functional paradigms to our frontend application help
+I claim that **heavily applying the following functional paradigms to our frontend application helps
 us mitigate and in some cases solve all of the aforementioned problems:**
 
 - Functional composition
@@ -528,5 +528,5 @@ yourself, since you have the opportunity to define these boundaries as you go.
 
 ## The Tradeoffs
 
-Now that we've seems some of the benefits of this approach, lets discuss the tradeoffs in part two
-of this article.
+Now that we've seems some of the benefits of this approach, part two will discuss the tradeoffs
+we'll have to make to get these benefits.
