@@ -29,7 +29,7 @@ const Bio = () => (
             imgStyle={{ borderRadius: `50%` }}
           />
           <p style={{ marginBottom: '0px' }}>
-            {description}
+            Having the unspoken conversations about software
             <br />
             Written by <strong>{author}</strong>
             <br />
