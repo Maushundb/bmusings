@@ -1,6 +1,8 @@
 ---
 title: 'Using Ramda with React and Redux: A Functional Deep Dive - Part 1'
 date: '2019-03-01T13:30'
+spoiler: 'The benefits of strict functional Javascript.'
+keywords: 'react, redux, ramda, functional, javascript, pipeline, programming, curry'
 ---
 
 Functional programming is all the rage amongst javascript developers these days. With the recent

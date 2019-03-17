@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+  const { siteTitle } = data.site.siteMetadata;
   const posts = data.allMarkdownRemark.edges;
 
   return (
@@ -18,20 +18,17 @@ const BlogIndex = ({ data, location }) => {
       />
       <Bio />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug;
+        const { frontmatter } = node;
+        const title = frontmatter.title || node.fields.slug;
         return (
           <div key={node.fields.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
+            <h3 style={{ marginBottom: rhythm(1 / 4) }}>
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 {title}
               </Link>
             </h3>
-            <small>{node.frontmatter.date}</small>
-            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <small>{frontmatter.date}</small>
+            <p dangerouslySetInnerHTML={{ __html: frontmatter.spoiler }} />
           </div>
         );
       })}
@@ -45,19 +42,19 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        siteTitle
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            spoiler
           }
         }
       }

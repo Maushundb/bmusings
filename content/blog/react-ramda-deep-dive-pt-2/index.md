@@ -1,6 +1,8 @@
 ---
 title: 'Using Ramda with React and Redux: A Functional Deep Dive - Part 2'
 date: '2019-03-02T13:30'
+spoiler: 'The downsides of strict functional Javascript.'
+keywords: 'react, redux, ramda, functional, javascript, pipeline, programming, curry'
 ---
 
 In [Part One](https://www.bmusings.io/react-ramda-deep-dive-pt-1/), we saw some of the benefits we

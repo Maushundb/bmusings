@@ -1,6 +1,8 @@
 ---
 title: 'The Fast Versus Clean Tradeoff'
 date: '2019-03-17T16:00'
+spoiler: "Are you taking the wrong approach to your code's quality?"
+keywords: 'code, quality, hack, quick, dirty, slow, clean'
 ---
 
 Frustrated by that one person on your dev team who always takes twice as long to finish a feature as

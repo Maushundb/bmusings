@@ -8,13 +8,15 @@ import { rhythm, scale } from '../utils/typography';
 
 const BlogPostTemplate = props => {
   const post = props.data.markdownRemark;
-  const siteTitle = props.data.site.siteMetadata.title;
+  const { frontmatter } = post;
+  const { siteTitle } = props.data.site.siteMetadata;
   const { previous, next } = props.pageContext;
+  const keywords = frontmatter.keywords.split(',').map(s => s.trim());
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
-      <h1>{post.frontmatter.title}</h1>
+      <SEO title={frontmatter.title} description={post.spoiler} keywords={keywords} />
+      <h1>{frontmatter.title}</h1>
       <p
         style={{
           ...scale(-1 / 5),
@@ -23,7 +25,7 @@ const BlogPostTemplate = props => {
           marginTop: rhythm(-1),
         }}
       >
-        {post.frontmatter.date}
+        {frontmatter.date}
       </p>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <hr
@@ -67,17 +69,18 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
+        siteTitle
         author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        spoiler
+        keywords
       }
     }
   }

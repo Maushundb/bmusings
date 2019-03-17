@@ -8,7 +8,8 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
     <StaticQuery
       query={detailsQuery}
       render={data => {
-        const metaDescription = description || data.site.siteMetadata.description;
+        const { siteMetadata } = data.site;
+        const metaDescription = description || siteMetadata.description;
         return (
           <Helmet
             htmlAttributes={{ lang }}
@@ -18,7 +19,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
               { name: `description`, content: metaDescription },
               {
                 property: `og:title`,
-                content: title,
+                content: title || siteMetadata.title,
               },
               {
                 property: `og:description`,
@@ -38,7 +39,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
               },
               {
                 name: `twitter:title`,
-                content: title,
+                content: title || siteMetadata.title,
               },
               {
                 name: `twitter:description`,
