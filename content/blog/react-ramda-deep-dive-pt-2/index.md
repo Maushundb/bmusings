@@ -3,9 +3,10 @@ title: 'Using Ramda with React and Redux: A Functional Deep Dive - Part 2'
 date: '2019-03-02T13:30'
 ---
 
-In Part 1, we saw some of the benefits we get from strictly adhering to basic functional principles
-in our frontend React and Redux application. However, as with all engineering decisions, this comes
-with its own set of tradeoffs we'll have to consider.
+In [Part One](https://www.bmusings.io/react-ramda-deep-dive-pt-1/), we saw some of the benefits we
+get from strictly adhering to basic functional principles in our frontend React and Redux
+application. However, as with all engineering decisions, this comes with its own set of tradeoffs
+we'll have to consider.
 
 These tradeoffs include:
 

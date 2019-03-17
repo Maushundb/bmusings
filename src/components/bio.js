@@ -14,6 +14,7 @@ const Bio = () => (
           style={{
             display: `flex`,
             marginBottom: rhythm(2.5),
+            alignItems: 'center',
           }}
         >
           <Image
@@ -25,17 +26,16 @@ const Bio = () => (
               minWidth: 50,
               borderRadius: `100%`,
             }}
-            imgStyle={{
-              borderRadius: `50%`,
-            }}
+            imgStyle={{ borderRadius: `50%` }}
           />
-          <p>
-            Personal blog by <strong>{author}</strong>
+          <p style={{ marginBottom: '0px' }}>
+            A place for important conversations about software
             <br />
-            You should follow him on <a href={`https://twitter.com/${social.twitter}`}>
-              Twitter
-            </a>{' '}
-            and <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>
+            Written by <strong>{author}</strong>
+            <br />
+            You should follow us on{' '}
+            <a href={`https://instagram.com/${social.instagram}`}>Instagram</a> and{' '}
+            <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
           </p>
         </div>
       );

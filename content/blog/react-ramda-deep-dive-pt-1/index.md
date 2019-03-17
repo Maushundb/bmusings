@@ -525,4 +525,4 @@ efficient.**
 ## The Tradeoffs
 
 Now that we've seen some of the benefits of this approach, we will discuss the tradeoffs we'll have
-to make to get these benefits in Part Two.
+to make to get these benefits in [Part Two](https://www.bmusings.io/react-ramda-deep-dive-pt-2/).
