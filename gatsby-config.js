@@ -6,7 +6,7 @@ module.exports = {
     description: `Conversations about software you don't have in university or a coding bootcamp`,
     siteUrl: `https://bmusings.io/`,
     social: {
-      twitter: `maushundb`,
+      twitter: `bmusings_io`,
       instagram: `bmusings`,
     },
   },
