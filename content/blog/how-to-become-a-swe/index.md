@@ -126,7 +126,7 @@ Things that fall under this category that you might have heard before are:
 - Distributed Systems
 
 All of these are very broad categories and each could be years of study all on their own. So the
-questions is: **how much computer science do I actually have to know to be a software engineer?**.
+questions is: **how much computer science do I actually have to know to be a software engineer?**
 
 Here’s the truth of the matter:
 
