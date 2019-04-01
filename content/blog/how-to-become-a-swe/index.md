@@ -158,7 +158,7 @@ What you should know:
 - Object-Oriented Programming
 - Client-server model
 
-Where you can learn it
+Where you can learn it:
 
 - [The Structure and Interpretation of Computer Programs](https://web.mit.edu/alexmv/6.037/sicp.pdf) -
   This is the book I first learned from and what they use to teach in most beginning computer
