@@ -153,7 +153,10 @@ What exactly should you know, and where can you go to learn it? Here’s some br
 What you should know:
 
 - At least one modern programming language and are able to make use of it’s complete syntax
-- All the data structures and algorithms on [this cheat sheet](http://bigocheatsheet.com/).
+- All common data structures and algorithms. Many of them can be found on
+  [this cheat sheet](http://bigocheatsheet.com/).
+- Object-Oriented Programming
+- Client-server model
 
 Where you can learn it
 
