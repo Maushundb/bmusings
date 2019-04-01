@@ -323,6 +323,11 @@ that any particular topic is not going to make or break your career as a SWE. Ra
 sticking with the process and gathering the sufficient breadth of knowledge and expertise to write
 useful software in a particular domain that other people want to use.
 
+The resources here are also far from comprehensive. They're only meant to be a starting point for
+your own self-education. The very top of the rabbit hole if you will. Don't be afraid to explore
+tangents, look at other posts or resources, and generally get in the weeds on whatever you find most
+interesting at the time.
+
 ## Bootstrapping Your Resume
 
 You’ve gone out, learned a programming language or two, can write a merge sort from scratch, and
