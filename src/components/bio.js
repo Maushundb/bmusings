@@ -17,7 +17,7 @@ const Bio = () => (
             alignItems: 'center',
           }}
         >
-          <Image
+          {/* <Image
             fixed={data.avatar.childImageSharp.fixed}
             alt={author}
             style={{
@@ -27,15 +27,14 @@ const Bio = () => (
               borderRadius: `100%`,
             }}
             imgStyle={{ borderRadius: `50%` }}
-          />
+          /> */}
           <p style={{ marginBottom: '0px' }}>
             Having the unspoken conversations about software
             <br />
-            Written by <strong>{author}</strong>
-            <br />
-            You should follow us on{' '}
-            <a href={`https://instagram.com/${social.instagram}`}>Instagram</a> and{' '}
-            <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+            You should follow us on <a href={`https://twitter.com/${social.twitter}`}>
+              Twitter
+            </a>{' '}
+            and <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>
           </p>
         </div>
       );
