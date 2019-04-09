@@ -4,9 +4,11 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Social from '../components/social';
 import { rhythm, scale } from '../utils/typography';
 
 const BlogPostTemplate = props => {
+  const { location } = props;
   const post = props.data.markdownRemark;
   const { frontmatter } = post;
   const { siteTitle } = props.data.site.siteMetadata;
@@ -14,7 +16,7 @@ const BlogPostTemplate = props => {
   const keywords = frontmatter.keywords.split(',').map(s => s.trim());
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={location} title={siteTitle}>
       <SEO title={frontmatter.title} description={post.spoiler} keywords={keywords} />
       <h1>{frontmatter.title}</h1>
       <p
@@ -27,6 +29,7 @@ const BlogPostTemplate = props => {
       >
         {frontmatter.date}
       </p>
+      <Social shareUrl={location.href} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <hr
         style={{
