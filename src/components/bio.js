@@ -29,7 +29,7 @@ const Bio = () => (
             imgStyle={{ borderRadius: `50%` }}
           /> */}
           <p style={{ marginBottom: '0px' }}>
-            Having the unspoken conversations about software
+            Unspoken conversations about software
             <br />
             You should follow us on <a href={`https://twitter.com/${social.twitter}`}>
               Twitter

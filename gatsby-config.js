@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     siteTitle: `bMusings`,
-    title: `bMusings | Having the unspoken conversations about software`,
+    title: `Unspoken Conversations About Software`,
     author: `Brandon Maushund`,
-    description: `Conversations about software you don't have in university or a coding bootcamp`,
+    description: `Whether you're an engineer, casual programmer, or learning to code - come learn the subtle secrets of silicon valley.`,
     siteUrl: `https://bmusings.io/`,
     social: {
       twitter: `bmusings_io`,
