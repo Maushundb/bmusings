@@ -13,6 +13,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
+        isLanding
         keywords={[
           `software`,
           `engineering`,
