@@ -13,8 +13,16 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title="All posts"
-        keywords={[`software`, `engineering`, `javascript`, `react`, `ramda`, `code`]}
+        keywords={[
+          `software`,
+          `engineering`,
+          `javascript`,
+          `react`,
+          `ramda`,
+          `code`,
+          `silicon`,
+          `valley`,
+        ]}
       />
       <Bio />
       {posts.map(({ node }) => {
