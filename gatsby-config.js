@@ -3,7 +3,7 @@ module.exports = {
     siteTitle: `bMusings`,
     title: `Unspoken Conversations About Software`,
     author: `Brandon Maushund`,
-    description: `Whether you're an engineer, casual programmer, or learning to code - come learn the subtle secrets of silicon valley.`,
+    description: `Whether you're an engineer or just learning to code - come learn the subtle software secrets of silicon valley.`,
     siteUrl: `https://bmusings.io/`,
     social: {
       twitter: `bmusings_io`,
