@@ -4,8 +4,24 @@ import Wordpress2016 from 'typography-theme-wordpress-2016';
 
 Wordpress2016.headerColor = '#373737';
 Wordpress2016.bodyColor = '#373737';
+Wordpress2016.headerFontFamily = ['Raleway'];
+Wordpress2016.bodyFontFamily = ['Merriweather'];
+Wordpress2016.googleFonts = [
+  {
+    name: 'Raleway',
+    styles: ['400', '700', '700i'],
+  },
+  {
+    name: 'Merriweather',
+    styles: ['400', '700', '700i'],
+  },
+];
 Wordpress2016.overrideThemeStyles = () => {
   return {
+    h1: {
+      fontFamily: 'Raleway',
+      fontWeight: 1000,
+    },
     'a.gatsby-resp-image-link': {
       boxShadow: `none`,
     },
@@ -14,8 +30,6 @@ Wordpress2016.overrideThemeStyles = () => {
     },
   };
 };
-
-delete Wordpress2016.googleFonts;
 
 const typography = new Typography(Wordpress2016);
 

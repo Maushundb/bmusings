@@ -37,7 +37,6 @@ const Layout = ({ location, title, children }) => (
       ) : (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}
         >
