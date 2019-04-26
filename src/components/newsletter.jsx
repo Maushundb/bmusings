@@ -61,7 +61,6 @@ const Newsletter = () => (
     method="post"
     target="popupwindow"
     onSubmit={() => {
-      console.log(NEWSLETTER_URL);
       window.open(NEWSLETTER_URL, 'popupwindow', 'scrollbars=yes,width=800,height=600');
       return true;
     }}
