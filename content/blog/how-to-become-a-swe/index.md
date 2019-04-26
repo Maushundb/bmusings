@@ -2,7 +2,7 @@
 title: 'How to Become a Software Engineer (Really)'
 date: '2019-04-01T09:00'
 spoiler: 'A definitive guide to changing careers and landing a job as a software engineer.'
-keywords: 'software, engineer, how, to, guide, framework'
+keywords: 'software, engineer, developer, how to guide, step by step, framework'
 ---
 
 Softwaring engineers are both highly sought after and highly compensated. By 2026,

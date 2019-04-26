@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Newsletter from '../components/newsletter';
 
 import { rhythm, scale } from '../utils/typography';
 
@@ -54,7 +55,9 @@ const Layout = ({ location, title, children }) => (
       )}
     </header>
     <main>{children}</main>
-    <footer>© {new Date().getFullYear()}</footer>
+    <footer>
+      <Newsletter />
+    </footer>
   </div>
 );
 

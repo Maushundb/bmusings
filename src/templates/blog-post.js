@@ -62,6 +62,11 @@ const BlogPostTemplate = props => {
           )}
         </li>
       </ul>
+      <hr
+        style={{
+          marginBottom: rhythm(1),
+        }}
+      />
     </Layout>
   );
 };
