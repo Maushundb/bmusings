@@ -1,13 +1,12 @@
 module.exports = {
   siteMetadata: {
     siteTitle: `bMusings`,
-    title: `Unspoken Conversations About Software`,
+    title: `bMusings - A blog by Brandon Maushund`,
     author: `Brandon Maushund`,
     description: `Whether you're an engineer or just learning to code - come learn the subtle software secrets of silicon valley.`,
     siteUrl: `https://bmusings.io/`,
     social: {
       twitter: `bmusings_io`,
-      instagram: `bmusings`,
     },
   },
   plugins: [
