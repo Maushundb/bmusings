@@ -2,8 +2,10 @@ import './global.css';
 import Typography from 'typography';
 import Wordpress2016 from 'typography-theme-wordpress-2016';
 
-Wordpress2016.headerColor = '#373737';
-Wordpress2016.bodyColor = '#373737';
+import { COLORS } from '../constants';
+
+Wordpress2016.headerColor = COLORS.BLACK;
+Wordpress2016.bodyColor = COLORS.BLACK;
 Wordpress2016.headerFontFamily = ['Raleway'];
 Wordpress2016.bodyFontFamily = ['Merriweather'];
 Wordpress2016.googleFonts = [
@@ -26,7 +28,7 @@ Wordpress2016.overrideThemeStyles = () => {
       boxShadow: `none`,
     },
     a: {
-      color: '#468b9d',
+      color: COLORS.BLUE,
     },
   };
 };

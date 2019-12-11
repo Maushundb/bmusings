@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Newsletter from '../components/newsletter';
 
 import { rhythm, scale } from '../utils/typography';
+import { COLORS } from '../constants';
 
 const ROOT_PATH = `${__PATH_PREFIX__}/`;
 
@@ -13,6 +14,9 @@ const Layout = ({ location, title, children }) => (
       marginRight: `auto`,
       maxWidth: rhythm(24),
       padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      position: 'relative',
+      backgroundColor: COLORS.WHITE,
+      borderRadius: '6px',
     }}
   >
     <header>

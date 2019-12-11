@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { rhythm, scale } from '../utils/typography';
 
-import { NEWSLETTER_URL } from '../constants';
+import { NEWSLETTER_URL, COLORS } from '../constants';
 
 const Form = styled.form`
   width: 300px;
@@ -42,7 +42,7 @@ const Subscribe = styled.input`
   border-radius: ${rhythm(1 / 4)};
   border: none;
   color: white;
-  background-color: #468b9d;
+  background-color: ${COLORS.BLUE};
   transition: background-color 200ms ease;
 
   &:hover {
