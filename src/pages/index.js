@@ -1,18 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
-
-const Background = styled.div`
-  background-color: #011627;
-  position: absolute;
-  width: 100%;
-  height: 60%;
-`;
 
 const BlogIndex = ({ data, location }) => {
   const { siteTitle } = data.site.siteMetadata;
@@ -20,7 +12,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <div>
-      <Background />
       <Layout location={location} title={siteTitle}>
         <SEO
           isLanding
