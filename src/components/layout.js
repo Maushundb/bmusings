@@ -1,17 +1,71 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { FaHome, FaBolt, FaRegUser } from 'react-icons/fa';
 import Newsletter from '../components/newsletter';
 
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 import { COLORS } from '../constants';
 
-const ROOT_PATH = `${__PATH_PREFIX__}/`;
 const Background = styled.div`
   background-color: #011627;
   position: fixed;
   width: 100%;
   height: 60%;
+`;
+
+const Header = styled.div`
+  margin: 0px auto ${rhythm(1)} auto;
+  padding: 16px ${rhythm(1.5)};
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const LeftContainer = styled.div``;
+
+const RightContainer = styled.div`
+  display: flex;
+`;
+
+const Logo = styled.h3`
+  margin: 0px;
+`;
+
+const HeaderLink = styled(Link)`
+  color: ${COLORS.WHITE};
+  box-shadow: none;
+  font-family: Raleway;
+  position: relative;
+  margin-left: 38px;
+
+  :hover {
+    opacity: 0.75;
+  }
+`;
+
+const LinkContent = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+// SVG + Link positioning is weird
+const HomeIcon = styled(FaHome)`
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
+`;
+
+const CoachingIcon = styled(FaBolt)`
+  margin-right: 4px;
+`;
+
+const AboutIcon = styled(FaRegUser)`
+  margin-right: 4px;
+  position: relative;
+  top: -2px;
 `;
 
 /**
@@ -20,6 +74,42 @@ const Background = styled.div`
 const Layout = ({ location, title, children }) => (
   <div>
     <Background />
+    <Header>
+      <LeftContainer>
+        <Logo>
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: COLORS.WHITE,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </Logo>
+      </LeftContainer>
+      <RightContainer>
+        <HeaderLink to={`/`}>
+          <LinkContent>
+            <HomeIcon />
+            <span>Home</span>
+          </LinkContent>
+        </HeaderLink>
+        <HeaderLink>
+          <LinkContent>
+            <CoachingIcon size={'.85em'} />
+            <span>Coaching</span>
+          </LinkContent>
+        </HeaderLink>
+        <HeaderLink>
+          <LinkContent>
+            <AboutIcon size={'.85em'} />
+            <span>About</span>
+          </LinkContent>
+        </HeaderLink>
+      </RightContainer>
+    </Header>
     <div
       style={{
         marginLeft: `auto`,
@@ -31,45 +121,6 @@ const Layout = ({ location, title, children }) => (
         borderRadius: '6px',
       }}
     >
-      <header>
-        {location.pathname === ROOT_PATH ? (
-          <h1
-            style={{
-              ...scale(1.2),
-              marginBottom: rhythm(1.5),
-              marginTop: 0,
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-          </h1>
-        ) : (
-          <h3
-            style={{
-              marginTop: 0,
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-          </h3>
-        )}
-      </header>
       <main>{children}</main>
       <footer>
         <Newsletter />
