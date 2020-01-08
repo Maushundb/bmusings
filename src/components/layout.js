@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FaHome, FaBolt, FaRegUser } from 'react-icons/fa';
-import Newsletter from '../components/newsletter';
 
 import { rhythm } from '../utils/typography';
 import { COLORS } from '../constants';
@@ -11,11 +10,12 @@ const Background = styled.div`
   background-color: #011627;
   position: fixed;
   width: 100%;
-  height: 60%;
+  height: 60vh;
+  min-height: 512px;
 `;
 
 const Header = styled.div`
-  margin: 0px auto ${rhythm(1)} auto;
+  margin: 0px auto ${rhythm(0.5)} auto;
   padding: 16px ${rhythm(1.5)};
   display: flex;
   position: relative;
@@ -51,27 +51,33 @@ const LinkContent = styled.div`
   position: relative;
 `;
 
+const LinkText = styled.span`
+  margin-left: 4px;
+`;
+
 // SVG + Link positioning is weird
 const HomeIcon = styled(FaHome)`
-  margin-right: 4px;
   position: relative;
   top: -1px;
 `;
 
-const CoachingIcon = styled(FaBolt)`
-  margin-right: 4px;
-`;
+const CoachingIcon = styled(FaBolt)``;
 
 const AboutIcon = styled(FaRegUser)`
-  margin-right: 4px;
   position: relative;
   top: -2px;
+`;
+
+const ContentContainer = styled.div`
+  margin: 0px auto;
+  max-width: ${rhythm(24)};
+  position: relative;
 `;
 
 /**
  * Root component for the site, lays out either the home page or blog post
  */
-const Layout = ({ location, title, children }) => (
+const Layout = ({ title, children }) => (
   <div>
     <Background />
     <Header>
@@ -89,43 +95,31 @@ const Layout = ({ location, title, children }) => (
           </Link>
         </Logo>
       </LeftContainer>
-      <RightContainer>
-        <HeaderLink to={`/`}>
+      {/* <RightContainer>
+        <HeaderLink to={'/'}>
           <LinkContent>
             <HomeIcon />
-            <span>Home</span>
+            <LinkText>Home</LinkText>
           </LinkContent>
         </HeaderLink>
-        <HeaderLink>
+        <HeaderLink to={'/coaching'}>
           <LinkContent>
             <CoachingIcon size={'.85em'} />
-            <span>Coaching</span>
+            <LinkText>Coaching</LinkText>
           </LinkContent>
         </HeaderLink>
         <HeaderLink>
           <LinkContent>
             <AboutIcon size={'.85em'} />
-            <span>About</span>
+            <LinkText>About</LinkText>
           </LinkContent>
         </HeaderLink>
-      </RightContainer>
+      </RightContainer> */}
     </Header>
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        position: 'relative',
-        backgroundColor: COLORS.WHITE,
-        borderRadius: '6px',
-      }}
-    >
+    <ContentContainer>
       <main>{children}</main>
-      <footer>
-        <Newsletter />
-      </footer>
-    </div>
+      <footer></footer>
+    </ContentContainer>
   </div>
 );
 
