@@ -1,9 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
+import ContentContainer from '../components/ui/ContentContainer';
+
+import { COLORS } from '../constants';
 
 const Coaching = ({ data, location }) => {
   const { siteTitle } = data.site.siteMetadata;
@@ -15,15 +19,14 @@ const Coaching = ({ data, location }) => {
           keywords={[
             `software`,
             `engineering`,
-            `javascript`,
-            `react`,
-            `ramda`,
-            `code`,
-            `silicon`,
-            `valley`,
+            `web`,
+            `development`,
+            `coaching`,
+            `programming`,
+            `mentor`,
           ]}
         />
-        <div>Hey</div>
+        <ContentContainer>About</ContentContainer>
       </Layout>
     </div>
   );

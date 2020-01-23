@@ -17,12 +17,13 @@ const ContentContainer = styled.div`
   padding: ${rhythm(3 / 4)};
 `;
 
-const BlogPostTemplate = props => {
-  const { location } = props;
-  const post = props.data.markdownRemark;
+const BlogPostTemplate = ({ location, data, pageContext }) => {
+  console.log(data);
+  console.log(location);
+  const post = data.markdownRemark;
   const { frontmatter } = post;
-  const { siteTitle } = props.data.site.siteMetadata;
-  const { previous, next } = props.pageContext;
+  const { siteTitle } = data.site.siteMetadata;
+  const { previous, next } = pageContext;
   const keywords = frontmatter.keywords.split(',').map(s => s.trim());
 
   return (

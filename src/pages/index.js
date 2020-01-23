@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
+import ContentContainer from '../components/ui/ContentContainer';
 
 import { COLORS } from '../constants';
 
@@ -43,12 +44,6 @@ const JumboFooter = styled.h3`
   text-align: center;
 `;
 
-const BlogPostsContainer = styled.div`
-  background-color: ${COLORS.WHITE};
-  border-radius: 6px;
-  padding: ${rhythm(3 / 4)};
-`;
-
 const BlogIndex = ({ data, location }) => {
   const { siteTitle } = data.site.siteMetadata;
   const posts = data.allMarkdownRemark.edges;
@@ -76,7 +71,7 @@ const BlogIndex = ({ data, location }) => {
             Javascript, Web Development, and Software Engineering. Let's learn some stuff together.
           </JumboFooter>
         </JumbotronContainer>
-        <BlogPostsContainer>
+        <ContentContainer>
           <BlogText>Blog</BlogText>
           {posts.map(({ node }) => {
             const { frontmatter } = node;
@@ -93,7 +88,7 @@ const BlogIndex = ({ data, location }) => {
               </div>
             );
           })}
-        </BlogPostsContainer>
+        </ContentContainer>
       </Layout>
     </div>
   );
@@ -108,7 +103,10 @@ export const pageQuery = graphql`
         siteTitle
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { glob: "**/blog/**" } }
+    ) {
       edges {
         node {
           fields {
