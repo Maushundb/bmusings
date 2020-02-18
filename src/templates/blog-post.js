@@ -18,8 +18,6 @@ const ContentContainer = styled.div`
 `;
 
 const BlogPostTemplate = ({ location, data, pageContext }) => {
-  console.log(data);
-  console.log(location);
   const post = data.markdownRemark;
   const { frontmatter } = post;
   const { siteTitle } = data.site.siteMetadata;

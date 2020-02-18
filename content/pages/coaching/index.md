@@ -1,5 +1,5 @@
 ---
-title: 'Test'
+title: 'Coaching'
 ---
 
 ### Are you trying to land a job as a web developer? Or level up your coding skills to rapidly advance your career?
@@ -23,7 +23,7 @@ Let me explain...
 I got into programming later than most people. Two years into studying music at UC Berkeley, I
 wanted to take a class on computer music. Unfortunately, one of the requirements for the class was a
 semester of computer science. So, never having coded anything in my life, I resolved to try to meet
-to the requirement and scrape my way through cs101.
+the requirement and scrape my way through cs101.
 
 Within a month, I was hooked.
 

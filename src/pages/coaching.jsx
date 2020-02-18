@@ -23,7 +23,6 @@ const CoachingButton = styled.a`
   text-transform: uppercase;
   font-family: 'Square Market', 'helvetica neue', helvetica, arial, sans-serif;
   letter-spacing: 1px;
-  line-height: 38px;
   padding: 0 28px;
   border-radius: 3px;
   font-weight: 500;
@@ -33,6 +32,7 @@ const CoachingButton = styled.a`
   justify-content: center;
   align-items: center;
   margin: 0px auto;
+  text-align: center;
 `;
 
 const Coaching = ({ data, location }) => {

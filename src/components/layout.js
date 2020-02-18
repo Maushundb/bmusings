@@ -108,12 +108,12 @@ const Layout = ({ title, children }) => (
             <LinkText>Coaching</LinkText>
           </LinkContent>
         </HeaderLink>
-        {/* <HeaderLink to={'/about'}>
+        <HeaderLink to={'/about'}>
           <LinkContent>
             <AboutIcon size={'.85em'} />
             <LinkText>About</LinkText>
           </LinkContent>
-        </HeaderLink> */}
+        </HeaderLink>
       </RightContainer>
     </Header>
     <ContentContainer>

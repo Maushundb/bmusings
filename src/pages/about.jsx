@@ -1,6 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import Image from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,8 +11,25 @@ import ContentContainer from '../components/ui/ContentContainer';
 
 import { COLORS } from '../constants';
 
-const Coaching = ({ data, location }) => {
-  const { siteTitle } = data.site.siteMetadata;
+const HeadshotImg = styled(Image)`
+  margin-right: ${rhythm(1 / 2)};
+  margin-bottom: ${rhythm(1 / 2)};
+  border-radius: 100%;
+`;
+
+const Title = styled.h2`
+  margin-top: 0px;
+`;
+
+const Header = styled(Flex)``;
+
+const AboutMe = ({ data, location }) => {
+  const {
+    site: {
+      siteMetadata: { siteTitle },
+    },
+    markdownRemark: { html },
+  } = data;
 
   return (
     <div>
@@ -26,19 +45,48 @@ const Coaching = ({ data, location }) => {
             `mentor`,
           ]}
         />
-        <ContentContainer>About</ContentContainer>
+        <ContentContainer>
+          <Header alignCenter column>
+            <HeadshotImg
+              fixed={data.avatar.childImageSharp.fixed}
+              imgStyle={{
+                borderRadius: `50%`,
+              }}
+              objectPosition="10% 10%"
+            />
+            <Title>About Me</Title>
+          </Header>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </ContentContainer>
       </Layout>
     </div>
   );
 };
 
-export default Coaching;
+export default AboutMe;
 
-export const pageQuery = graphql`
-  query {
+export const AboutMeQuery = graphql`
+  query AboutMeQuery {
+    avatar: file(absolutePath: { regex: "/headshot.JPG/" }) {
+      childImageSharp {
+        fixed(width: 164, height: 164, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         siteTitle
+      }
+    }
+    markdownRemark(fields: { slug: { eq: "/aboutMe/" } }) {
+      id
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        spoiler
+        keywords
       }
     }
   }
