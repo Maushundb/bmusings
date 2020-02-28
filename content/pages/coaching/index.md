@@ -18,39 +18,7 @@ What is it?
 > **There is no clear, definable curriculum that describes what you need to know to be an
 > exceptional web developer.**
 
-Let me explain...
-
-I got into programming later than most people. Two years into studying music at UC Berkeley, I
-wanted to take a class on computer music. Unfortunately, one of the requirements for the class was a
-semester of computer science. So, never having coded anything in my life, I resolved to try to meet
-the requirement and scrape my way through cs101.
-
-Within a month, I was hooked.
-
-I ended up switching my major and graduating with a degree in computer science. I thought after
-graduating from one of the top schools it'd be easy to land a job as a developer.
-
-But it wasn't.
-
-When it came time to get my first internship, I only managed to get one offer. And just barely. The
-first day on the job I wasn't even able to complete the welcome tasks. I thought there was something
-wrong with me.
-
-Seeing me frustrated, a full-time engineer on the team took me under his wing. He told me a hard
-truth:
-
-> **The computer science field changes so fast, there is no way to possibly learn everything you
-> need to know from a traditional education or on your own. You need to learn on the job or from
-> other engineers.**
-
-Over the next few weeks, he sent me material on things I had missed the past four years. As I
-started writing code, he gave me feedback on what I was writing and how to improve it. Slowly but
-surely I started to learn, and eventually ended up getting a full-time offer from the company that
-launched my career.
-
-<h2 style="text-align: center">I want to do the same for you</h2>
-
-Fast forward to present day, I see this all the time in people trying to get into web development.
+I see this problem all the time in people trying to get into web development.
 
 You may have taken an online course on Javascript, or a web design class in college. Or maybe you're
 trying to learn React from YouTube videos and Medium articles. Things start off well. You're excited
@@ -73,12 +41,13 @@ This is the fundamental flaw. But I want to help.
 
 <h2 style="text-align: center">Private, one-on-one coaching</h2>
 
-What if I told you that you could take advantage of this to massively accelerate your progress
-towards achieving your dream career in software?
+By signing up for my private, one-on-one coaching sessions, you’ll have consistent access to an
+experienced web developer, just like I did, to help guide you as you navigate your way through the
+world of software development. No more confusion, no more wondering what you need to know or how to
+learn it.
 
-My private, one-on-one coaching sessions are a way for me to help you do that. During our first
-meeting, I'll assess exactly where you are as a programmer and help you identify any gaps in
-knowledge you may have. All absolutely free for the first session and at no risk to you.
+During our first meeting, I'll assess exactly where you are as a programmer and help you identify
+any gaps in knowledge you may have. All absolutely free for the first session and at no risk to you.
 
 Over the following few sessions, I will:
 
@@ -101,12 +70,10 @@ We'll cover data structures and algorithms as well as general interviewing skill
 advantage over other self-taught programmers who may have not had a traditional computer science
 education.
 
-If you're already employed as a software engineer, I can help you as well. We'll work on soft skills
-like driving technical decisions, project management, and effectively interacting with your peers
-that managers look for when promoting developers to more senior roles.
+If you're still unsure, let Brenden, one of my first clients, tell you more about what I can do for
+you.
 
-Technically we'll continue to hone your code craftsmanship, getting practice designing large
-distributed services and frontends that scale to serve millions of people.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E-QaFHh1H4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2 style="text-align: center">Space is limited.</h2>
 
