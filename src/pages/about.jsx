@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import Image from 'gatsby-image';
@@ -8,8 +8,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 import ContentContainer from '../components/ui/ContentContainer';
-
-import { COLORS } from '../constants';
 
 const HeadshotImg = styled(Image)`
   margin-right: ${rhythm(1 / 2)};
