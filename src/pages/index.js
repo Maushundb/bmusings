@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
-import ContentContainer from '../components/ui/ContentContainer';
+import ContentCard from '../components/ui/ContentCard';
 
 import { COLORS } from '../constants';
 
@@ -71,7 +71,10 @@ const BlogIndex = ({ data, location }) => {
             Javascript, Web Development, and Software Engineering. Let's learn some stuff together.
           </JumboFooter>
         </JumbotronContainer>
-        <ContentContainer>
+        {/* <ContentCard>
+          <BlogText>Coaching</BlogText>
+        </ContentCard> */}
+        <ContentCard>
           <BlogText>Blog</BlogText>
           {posts.map(({ node }) => {
             const { frontmatter } = node;
@@ -88,7 +91,7 @@ const BlogIndex = ({ data, location }) => {
               </div>
             );
           })}
-        </ContentContainer>
+        </ContentCard>
       </Layout>
     </div>
   );

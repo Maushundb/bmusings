@@ -22,7 +22,7 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
   const { frontmatter } = post;
   const { siteTitle } = data.site.siteMetadata;
   const { previous, next } = pageContext;
-  const keywords = frontmatter.keywords ? frontmatter.keywords.split(',').map(s => s.trim()) : [];
+  const keywords = frontmatter.keywords.split(',').map(s => s.trim());
 
   return (
     <div>

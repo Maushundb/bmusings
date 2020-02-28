@@ -7,7 +7,7 @@ import Image from 'gatsby-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
-import ContentContainer from '../components/ui/ContentContainer';
+import ContentCard from '../components/ui/ContentCard';
 
 const HeadshotImg = styled(Image)`
   margin-right: ${rhythm(1 / 2)};
@@ -43,7 +43,7 @@ const AboutMe = ({ data, location }) => {
             `mentor`,
           ]}
         />
-        <ContentContainer>
+        <ContentCard>
           <Header alignCenter column>
             <HeadshotImg
               fixed={data.avatar.childImageSharp.fixed}
@@ -55,7 +55,7 @@ const AboutMe = ({ data, location }) => {
             <Title>About Me</Title>
           </Header>
           <div dangerouslySetInnerHTML={{ __html: html }} />
-        </ContentContainer>
+        </ContentCard>
       </Layout>
     </div>
   );

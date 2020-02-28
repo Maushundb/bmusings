@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-// import { rhythm } from '../utils/typography';
-import ContentContainer from '../components/ui/ContentContainer';
+import ContentCard from '../components/ui/ContentCard';
 
 import { COLORS } from '../constants';
 
@@ -57,7 +56,7 @@ const Coaching = ({ data, location }) => {
             `mentor`,
           ]}
         />
-        <ContentContainer>
+        <ContentCard>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <BookNowContainer>
             <CoachingButton
@@ -68,7 +67,7 @@ const Coaching = ({ data, location }) => {
               Book Your Free Appointment Now
             </CoachingButton>
           </BookNowContainer>
-        </ContentContainer>
+        </ContentCard>
       </Layout>
     </div>
   );
