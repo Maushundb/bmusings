@@ -38,6 +38,7 @@
     "react-icons": "3.8.0",
     "react-share": "^2.4.0",
     "react-typography": "^0.16.18",
+    "react-use-media-query-hook": "0.0.1",
     "styled-components": "^4.2.0",
     "styled-flex-component": "3.0.0",
     "typeface-merriweather": "0.0.54",
