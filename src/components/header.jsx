@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FaHome, FaBolt, FaRegUser } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi';
-import useMediaQuery from 'react-use-media-query-hook';
+import useMediaQuery from '../lib/useMediaQuery';
 
 import { rhythm } from '../utils/typography';
 
