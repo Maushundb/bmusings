@@ -4,8 +4,6 @@ title: 'Coaching'
 
 ### Are you trying to land a job as a web developer? Or level up your coding skills to rapidly advance your career?
 
-<h2 style="text-align: center">Read on.</h2>
-
 After working for years at both elite Silicon Valley corporations and disruptive startups as a web
 developer, I realized there's a fundamental flaw in the talent pipeline.
 

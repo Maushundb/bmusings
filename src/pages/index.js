@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import Image from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -44,6 +46,30 @@ const JumboFooter = styled.h3`
   text-align: center;
 `;
 
+const CoachingContentContainer = styled(Flex)`
+  margin-top: ${rhythm(1)};
+
+  @media screen and (max-width: 528px) {
+    flex-direction: column;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: ${rhythm(1 / 2)};
+  }
+`;
+
+const CoachingImage = styled(Image)`
+  margin: 0px ${rhythm(1 / 2)} 0px 0px;
+  min-width: 300px;
+  border-radius: 2px;
+
+  @media screen and (max-width: 528px) {
+    min-width: 0px;
+    margin-bottom: ${rhythm(1 / 2)};
+  }
+`;
+
 const BlogIndex = ({ data, location }) => {
   const { siteTitle } = data.site.siteMetadata;
   const posts = data.allMarkdownRemark.edges;
@@ -71,9 +97,24 @@ const BlogIndex = ({ data, location }) => {
             Javascript, Web Development, and Software Engineering. Let's learn some stuff together.
           </JumboFooter>
         </JumbotronContainer>
-        {/* <ContentCard>
+        <ContentCard>
           <BlogText>Coaching</BlogText>
-        </ContentCard> */}
+          <CoachingContentContainer>
+            <CoachingImage fluid={data.coachingImg.childImageSharp.fluid} />
+            <Flex column justifyBetween>
+              <div>
+                <h3>Struggling to learn web development?</h3>
+                <div>
+                  Get a personalized learning roadmap, code review, and weekly guidance from a
+                  professional web developer.
+                </div>
+              </div>
+              <div>
+                <Link to={'/coaching'}>Learn More →</Link>
+              </div>
+            </Flex>
+          </CoachingContentContainer>
+        </ContentCard>
         <ContentCard>
           <BlogText>Blog</BlogText>
           {posts.map(({ node }) => {
@@ -100,10 +141,18 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query {
+  query homeQuery {
     site {
       siteMetadata {
         siteTitle
+      }
+    }
+
+    coachingImg: file(absolutePath: { regex: "/pair-programming.png/" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
     allMarkdownRemark(
