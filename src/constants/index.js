@@ -7,8 +7,8 @@ export const COLORS = {
 
 export const FONT_SIZES = {
   DEFAULT: '0px', // body
-  MEDIUM: '0px', // h4
-  LARGE: '0px', // h3
+  MEDIUM: '1rem', // h4
+  LARGE: '1.44rem', // h3
   XLARGE: '0px', // h2
   XXLARGE: '0px', // h1
 };

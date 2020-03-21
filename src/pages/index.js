@@ -105,7 +105,7 @@ const BlogIndex = ({ data, location }) => {
               <div>
                 <h3>Struggling to learn web development?</h3>
                 <div>
-                  Get a personalized learning roadmap, code review, and weekly guidance from a
+                  Get a personalized learning roadmap, code review, and regular guidance from a
                   professional web developer.
                 </div>
               </div>

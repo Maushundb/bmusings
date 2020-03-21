@@ -62,5 +62,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "devDependencies": {
+    "gatsby-plugin-root-import": "2.0.5"
   }
 }

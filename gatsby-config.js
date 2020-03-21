@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     siteTitle: `bMusings`,
@@ -61,6 +63,16 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        components: path.join(__dirname, 'src/components'),
+        constants: path.join(__dirname, 'src/constants'),
+        lib: path.join(__dirname, 'src/lib'),
+        utils: path.join(__dirname, 'src/utils'),
+        pages: path.join(__dirname, 'src/pages'),
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

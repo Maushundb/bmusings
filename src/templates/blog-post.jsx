@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Social from '../components/social';
 import { rhythm, scale } from '../utils/typography';
 import Newsletter from '../components/newsletter';
+import Text from 'components/ui/Text';
 
 import { COLORS } from '../constants';
 
@@ -15,6 +15,10 @@ const ContentContainer = styled.div`
   background-color: ${COLORS.WHITE};
   border-radius: 6px;
   padding: ${rhythm(3 / 4)};
+`;
+
+const PostNavTitles = styled(Text)`
+  margin-bottom: ${rhythm(1 / 4)};
 `;
 
 const BlogPostTemplate = ({ location, data, pageContext }) => {
@@ -47,7 +51,6 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
               marginBottom: rhythm(1),
             }}
           />
-          <Bio />
 
           <ul
             style={{
@@ -60,16 +63,26 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
           >
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
+                <>
+                  <PostNavTitles size="medium" fontWeight="bold">
+                    Previous Post
+                  </PostNavTitles>
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                </>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
+                <>
+                  <PostNavTitles size="medium" fontWeight="bold">
+                    Next Post
+                  </PostNavTitles>
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                </>
               )}
             </li>
           </ul>
