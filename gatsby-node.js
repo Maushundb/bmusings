@@ -58,6 +58,10 @@ exports.createPages = async ({ graphql, actions }) => {
     path: 'about',
     component: path.resolve('./src/pages/about.jsx'),
   });
+  createPage({
+    path: 'blog',
+    component: path.resolve('./src/pages/blog.jsx'),
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

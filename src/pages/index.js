@@ -116,7 +116,7 @@ const BlogIndex = ({ data, location }) => {
           </CoachingContentContainer>
         </ContentCard>
         <ContentCard>
-          <BlogText>Blog</BlogText>
+          <BlogText>Top Blog Posts</BlogText>
           {posts.map(({ node }) => {
             const { frontmatter } = node;
             const title = frontmatter.title || node.fields.slug;
@@ -132,6 +132,7 @@ const BlogIndex = ({ data, location }) => {
               </div>
             );
           })}
+          <Link to={'/blog'}>See All →</Link>
         </ContentCard>
       </Layout>
     </div>
@@ -157,7 +158,18 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { glob: "**/blog/**" } }
+      filter: {
+        fileAbsolutePath: { glob: "**/blog/**" }
+        frontmatter: {
+          title: {
+            in: [
+              "Using Ramda with React and Redux: A Functional Deep Dive - Part 1"
+              "How to Ace your Technical Interview"
+              "4 Ways Every Software Developer Should Improve Their Tools"
+            ]
+          }
+        }
+      }
     ) {
       edges {
         node {

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FaHome, FaBolt, FaRegUser } from 'react-icons/fa';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiBookOpen } from 'react-icons/fi';
 import useMediaQuery from '../lib/useMediaQuery';
 
 import { rhythm } from '../utils/typography';
@@ -63,13 +63,18 @@ const LinkText = styled.span`
 const HomeIcon = styled(FaHome)`
   position: relative;
   top: -1px;
+  margin-right: 2px;
 `;
 
 const CoachingIcon = styled(FaBolt)``;
+const BlogIcon = styled(FiBookOpen)`
+  margin-right: 4px;
+`;
 
 const AboutIcon = styled(FaRegUser)`
   position: relative;
   top: -2px;
+  margin-right: 2px;
 `;
 
 const HamburgerMenuRoot = styled(Flex)`
@@ -114,6 +119,9 @@ const Header = ({ title }) => {
           <HamburgerLink to={'/coaching'}>
             <HamburgerLinkText>Coaching</HamburgerLinkText>
           </HamburgerLink>
+          <HamburgerLink to={'/blog'}>
+            <HamburgerLinkText>Blog</HamburgerLinkText>
+          </HamburgerLink>
           <HamburgerLink to={'/about'}>
             <HamburgerLinkText>About</HamburgerLinkText>
           </HamburgerLink>
@@ -132,6 +140,12 @@ const Header = ({ title }) => {
         <LinkContent>
           <CoachingIcon size={'.85em'} />
           <LinkText>Coaching</LinkText>
+        </LinkContent>
+      </HeaderLink>
+      <HeaderLink to={'/blog'}>
+        <LinkContent>
+          <BlogIcon size={'.85em'} />
+          <LinkText>Blog</LinkText>
         </LinkContent>
       </HeaderLink>
       <HeaderLink to={'/about'}>
