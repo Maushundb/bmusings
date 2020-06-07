@@ -92,7 +92,7 @@ the list.
 ### 4. Once you come to a general approach, verbally communicate it to the interviewer. Consider and incorporate any feedback, as well as it’s eventual runtime.
 
 This is a sanity check for you and a chance to elicit a hint from your interviewer. Once you have a
-general ideal, run it by them and see how they react. If they’re supportive, great! If they’re not,
+general idea, run it by them and see how they react. If they’re supportive, great! If they’re not,
 often they will try to nudge you into the right direction. Also great! There’s no downside to this
 step, so make sure not to skip it.
 
@@ -141,9 +141,6 @@ Plan on doing a few practice interviews before doing any real ones. The best thi
 have an existing engineer interview you a few times before you ever apply. That way, you have a
 solid feel for what the conditions are. No amount of solo prep will ever come close to how the
 pressure of a real interview feels.
-
-If you’re interested in me personally helping you prepare for your technical interviews with mock
-interviews and personalized feedback, consider signing up for my [one-on-one coaching](/coaching).
 
 Try to schedule some lower-stakes interviews at companies that you may not be as interested in
 before your top choices so you have some additional practice. After awhile, you’ll start to feel

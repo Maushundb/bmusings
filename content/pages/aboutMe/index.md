@@ -36,5 +36,3 @@ I want to do the same for you.
 
 I'm passionate about the art of writing beautiful yet practical code, and I'm passionate about
 teaching it. I want to help others fall in love with programming just like I did.
-
-If you're interested in working one-on-one with me, [click here](/coaching).

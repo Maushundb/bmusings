@@ -116,7 +116,7 @@ const Header = ({ title }) => {
           <HamburgerLink to={'/'}>
             <HamburgerLinkText>Home</HamburgerLinkText>
           </HamburgerLink>
-          <HamburgerLink to={'/coaching'}>
+          <HamburgerLink as="a" href={'https://optimizeyoursoftwarecareer.com'}>
             <HamburgerLinkText>Coaching</HamburgerLinkText>
           </HamburgerLink>
           <HamburgerLink to={'/blog'}>
@@ -136,7 +136,7 @@ const Header = ({ title }) => {
           <LinkText>Home</LinkText>
         </LinkContent>
       </HeaderLink>
-      <HeaderLink to={'/coaching'}>
+      <HeaderLink as="a" href={'https://optimizeyoursoftwarecareer.com'}>
         <LinkContent>
           <CoachingIcon size={'.85em'} />
           <LinkText>Coaching</LinkText>

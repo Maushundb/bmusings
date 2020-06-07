@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import Image from 'gatsby-image';
@@ -103,14 +103,14 @@ const BlogIndex = ({ data, location }) => {
             <CoachingImage fluid={data.coachingImg.childImageSharp.fluid} />
             <Flex column justifyBetween>
               <div>
-                <h3>Struggling to learn web development?</h3>
+                <h3>Want to level up your engineering career?</h3>
                 <div>
-                  Get a personalized learning roadmap, code review, and regular guidance from a
-                  professional web developer.
+                  Get coached by me personally. Rise through the ranks and live your dream career as
+                  a software engineer.
                 </div>
               </div>
               <div>
-                <Link to={'/coaching'}>Learn More →</Link>
+                <a href={'https://optimizeyoursoftwarecareer.com'}>Learn More →</a>
               </div>
             </Flex>
           </CoachingContentContainer>

@@ -50,11 +50,6 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   createPage({
-    path: 'coaching',
-    component: path.resolve('./src/pages/coaching.jsx'),
-  });
-
-  createPage({
     path: 'about',
     component: path.resolve('./src/pages/about.jsx'),
   });
